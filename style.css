@@ -1,0 +1,238 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Main Container */
+.container {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    transition: 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    padding: 18px 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Theme Button */
+#theme {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#theme:hover {
+    background-color: #1d4ed8;
+}
+
+/* Navbar Select */
+.navbar select,
+.ratingSelect select {
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background-color: white;
+    color: #1e293b;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Wrapper */
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Category */
+.itemsCategory {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.itemsCategory label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.chackBox {
+    width: 17px;
+    height: 17px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* Price Range */
+.rangeDiv {
+    margin-bottom: 30px;
+}
+
+.range {
+    width: 100%;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* Rating */
+.ratingSelect select {
+    width: 100%;
+}
+
+/* Main Page */
+.mainpage {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Product Card */
+.products {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Product Image */
+.products img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Product Content */
+.content {
+    padding: 16px;
+}
+
+.content h1 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #1e40af;
+}
+
+.content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+/* Dark Theme */
+.container.theme {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+.container.theme .navbar,
+.container.theme .sidebar,
+.container.theme .products {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+.container.theme .content h1 {
+    color: #60a5fa;
+}
+
+.container.theme .content p {
+    color: #cbd5e1;
+}
+
+.container.theme .navbar select,
+.container.theme .ratingSelect select {
+    background-color: #334155;
+    color: white;
+    border-color: #475569;
+}
+
+.container.theme .products {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tablet Responsive */
+@media (max-width: 1000px) {
+    .mainpage {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 650px) {
+    .container {
+        padding: 12px;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .mainpage {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .products img {
+        height: 220px;
+    }
+}
